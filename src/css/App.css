@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80px;
+  width: 1250px;
+  height: 100vh;
+  background-color: #21262c;
+}
+body .main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 100px;
+  color: #f2d5c0;
+}
+body .main .input-side {
+  display: flex;
+  flex-direction: column;
+  width: 465px;
+  gap: 50px;
+}
+body .main .input-side .pass-text {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: large;
+}
+body .main .input-side .pass-text label {
+  margin-bottom: 10px;
+}
+body .main .input-side .pass-text input {
+  width: 200px;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  color: #21262c;
+  margin-bottom: 20px;
+}
+body .main .input-side .pass-text input:focus {
+  outline: solid 2px #f2d5c0;
+}
+body .main .input-side .pass-text textarea {
+  align-self: center;
+  resize: none;
+  padding: 8px;
+  border-radius: 5px;
+  height: 55px;
+  width: 445px;
+  color: #21262c;
+  scrollbar-arrow-color: red;
+}
+body .main .input-side .pass-text textarea:focus {
+  outline: solid 2px #f2d5c0;
+}
+body .main .input-side .buttons {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 400px;
+}
+body .main .input-side .buttons button {
+  border: none;
+  padding: 8px;
+  border-radius: 3px;
+  font-size: large;
+  background-color: #f2d5c0;
+  color: #21262c;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+body .main .input-side .buttons button:hover {
+  color: #f2d5c0;
+  background-color: grey;
+}
+body .main .input-side .buttons button:active {
+  transform: scale(0.95);
+}
+body .main .input-side .ciphered {
+  align-self: center;
+  resize: none;
+  padding: 8px;
+  border-radius: 5px;
+  height: 55px;
+  width: 445px;
+  color: #21262c;
+}
+body .main .input-side .ciphered:focus {
+  outline: none;
+}
+body .main table {
+  border-collapse: collapse;
+  font-size: 12px;
+  width: 600px;
+  height: 600px;
+}
+body .main table tr:first-child td {
+  border-top: none;
+}
+body .main table tr:last-child td {
+  border-bottom: none;
+}
+body .main table tr td {
+  border: solid 2px #f2d5c0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: default;
+}
+body .main table tr td:first-child {
+  border-left: none;
+}
+body .main table tr td:last-child {
+  border-right: none;
+}
+body .main .languages {
+  align-self: center;
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: space-between;
+}
+body .main .languages button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #f2d5c0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+body .main .languages button:hover {
+  color: gray;
+}/*# sourceMappingURL=App.css.map */
