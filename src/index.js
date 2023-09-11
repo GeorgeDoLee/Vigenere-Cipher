@@ -1,14 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import i18next from 'i18next';
-import english from './translation/english.json';
-import georgian from './translation/georgian.json';
-import greek from './translation/greek.json';
-import armenian from './translation/armenian.json';
-import arabic from './translation/arabic.json';
+import React from "react";
+import "./index.css";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import i18next from "i18next";
+import english from "./translation/english.json";
+import georgian from "./translation/georgian.json";
+import greek from "./translation/greek.json";
+import armenian from "./translation/armenian.json";
+import arabic from "./translation/arabic.json";
 
-import { I18nextProvider } from 'react-i18next';
+import { I18nextProvider } from "react-i18next";
 
 i18next.init({
   lng: "ge",
@@ -27,11 +28,11 @@ i18next.init({
     },
     ar: {
       global: arabic,
-    }
-  }
-})
+    },
+  },
+});
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <I18nextProvider i18n={i18next}>

@@ -6,30 +6,29 @@ const Table = () => {
 
   return (
     <table>
-      <tbody>
-        {letters.split("").map((_, i) => (
-          <tr
-            key={i}
-            style={{ backgroundColor: i === row ? "red" : "transparent" }}
-          >
-            {letters.split("").map((_, j) => (
-              <td
-                key={j}
-                style={{
-                  backgroundColor:
-                    i === row && j === col
-                      ? "purple"
-                      : j === col
-                      ? "red"
-                      : "transparent",
-                }}
-              >
-                {table[i][j]}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
+      {letters.split("").map((_, i) => (
+        <tr
+          key={i}
+          className={`border-b-2 last:border-b-0 ${
+            i === row ? "bg-red-500" : "bg-transparent"
+          }`}
+        >
+          {letters.split("").map((_, j) => (
+            <td
+              key={j}
+              className={`border-skin border-r-2  text-skin text-center text-xs min-w-[20px] min-h-[20px] last:border-r-0 ${
+                i === row && j === col
+                  ? "bg-purple-500"
+                  : j === col
+                  ? "bg-red-500"
+                  : "bg-transparent"
+              }`}
+            >
+              {table[i][j]}
+            </td>
+          ))}
+        </tr>
+      ))}
     </table>
   );
 };

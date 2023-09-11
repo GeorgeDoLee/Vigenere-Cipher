@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./css/App.css";
 import { useTranslation } from "react-i18next";
 import Table from "./components/Table";
 import InputSide from "./components/InputSide";
+import LanguageButtons from "./components/LanguageButtons";
 
 export const VigenereContext = React.createContext({});
 
@@ -20,11 +20,6 @@ function VigenereCipher() {
   const [answer, setAnswer] = useState("");
   const [row, setRow] = useState(null);
   const [col, setCol] = useState(null);
-  const [buttonsStyle, setButtonsStyle] = useState({
-    width: "400px",
-    fontSize: "large",
-  });
-  const [tableSize, setTableSize] = useState("650px");
 
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -89,31 +84,35 @@ function VigenereCipher() {
   };
 
   return (
-    <div className="main">
-      <VigenereContext.Provider
-        value={{
-          t,
-          i18n,
-          letters,
-          setPassword,
-          setText,
-          setAnswer,
-          password,
-          text,
-          answer,
-          cipher,
-          decipher,
-          setCol,
-          setRow,
-          row,
-          col,
-          setTableSize,
-          table,
-        }}
-      >
-        <Table />
-        <InputSide />
-      </VigenereContext.Provider>
+    <div className="w-screen h-screen bg-obsidian flex items-center justify-center">
+      <div className="flex flex-row items-center justify-center gap-12">
+        <VigenereContext.Provider
+          value={{
+            t,
+            i18n,
+            letters,
+            setPassword,
+            setText,
+            setAnswer,
+            password,
+            text,
+            answer,
+            cipher,
+            decipher,
+            setCol,
+            setRow,
+            row,
+            col,
+            table,
+          }}
+        >
+          <Table />
+          <div className="h-full">
+            <InputSide />
+            <LanguageButtons />
+          </div>
+        </VigenereContext.Provider>
+      </div>
     </div>
   );
 }

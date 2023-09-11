@@ -11,9 +11,13 @@ const LanguageButtons = () => {
     { title: "العربية", lang: "ar" },
   ];
   return (
-    <div className="languages">
+    <div className="flex flex-row justify-center items-center gap-2 text-sm text-skin">
       {buttons.map((button, i) => (
-        <button key={i} onClick={() => i18n.changeLanguage(button.lang)}>
+        <button
+          key={i}
+          className="duration-300 hover:text-gray-200 active:scale-95"
+          onClick={() => i18n.changeLanguage(button.lang)}
+        >
           {button.title}
         </button>
       ))}

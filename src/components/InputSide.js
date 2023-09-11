@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { VigenereContext } from "../App";
-import LanguageButtons from "./LanguageButtons";
 
 const InputSide = () => {
   const {
@@ -62,50 +61,65 @@ const InputSide = () => {
   };
 
   return (
-    <div className="input-side">
-      <div className="pass-text">
-        <label style={i18n.language === "ar" ? { alignSelf: "end" } : {}}>
+    <div className="self-start flex flex-col justify-center items-center gap-4 p-4">
+      <div className="flex flex-col justify-evenly gap-2 text-md p-2">
+        <label
+          className={`mt-[10px] text-skin ${
+            i18n.language === "ar" ? "self-end" : "self-start"
+          }`}
+        >
           {t("password")}
         </label>
         <input
-          style={
-            i18n.language === "ar"
-              ? { alignSelf: "end", direction: "rtl", fontSize: "large" }
-              : {}
-          }
+          className={`w-[200px] h-[35px] p-2 rounded-md text-obsidian ${
+            i18n.language === "ar" ? "self-end text-rtl " : ""
+          } focus: outline-skin focus:outline-2`}
           type="text"
           value={password}
           onChange={handlePassword}
         />
-        <label style={i18n.language === "ar" ? { alignSelf: "end" } : {}}>
+        <label
+          className={`mt-[10px] text-skin ${
+            i18n.language === "ar" ? "self-end" : "self-start"
+          }`}
+        >
           {t("text")}
         </label>
         <textarea
-          style={
-            i18n.language === "ar"
-              ? { alignSelf: "end", direction: "rtl", fontSize: "large" }
-              : {}
-          }
+          className={`resize-none p-2 rounded-md h-[80px] w-[445px] text-obsidian focus:outline-2 focus:outline-skin ${
+            i18n.language === "ar" ? "self-end text-rtl" : ""
+          }`}
           value={text}
           onChange={handleText}
         ></textarea>
       </div>
-      <div className="buttons">
-        <button onClick={cipher}>{t("cipher")}</button>
-        <button onClick={decipher}>{t("decipher")}</button>
-        <button onClick={clear}>{t("clear")}</button>
+      <div className="flex flex-row justify-center items-center gap-4">
+        <button
+          className="p-2 bg-skin text-obsidian rounded-md"
+          onClick={cipher}
+        >
+          {t("cipher")}
+        </button>
+        <button
+          className="p-2 bg-skin text-obsidian rounded-md"
+          onClick={decipher}
+        >
+          {t("decipher")}
+        </button>
+        <button
+          className="p-2 bg-skin text-obsidian rounded-md"
+          onClick={clear}
+        >
+          {t("clear")}
+        </button>
       </div>
       <textarea
-        style={
-          i18n.language === "ar"
-            ? { alignSelf: "end", direction: "rtl", fontSize: "large" }
-            : {}
-        }
-        className="ciphered"
+        className={`resize-none p-2 rounded-md h-[80px] w-[445px] text-obsidian focus:outline-2 focus:outline-skin ${
+          i18n.language === "ar" ? "self-end text-rtl" : ""
+        }`}
         readOnly
         value={answer}
       ></textarea>
-      <LanguageButtons />
     </div>
   );
 };
