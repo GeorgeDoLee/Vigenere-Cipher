@@ -11,7 +11,7 @@ const LanguageButtons = () => {
     { title: "العربية", lang: "ar" },
   ];
   return (
-    <div className="flex flex-row justify-center items-center gap-2 text-sm text-skin">
+    <div className="flex flex-row justify-center items-center gap-4 text-xs text-skin">
       {buttons.map((button, i) => (
         <button
           key={i}
