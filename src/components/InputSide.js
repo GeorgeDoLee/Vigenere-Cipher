@@ -72,7 +72,7 @@ const InputSide = () => {
         </label>
         <input
           className={`w-[200px] h-[35px] p-2 rounded-md text-obsidian ${
-            i18n.language === "ar" ? "self-end text-rtl " : ""
+            i18n.language === "ar" ? "self-end rtl " : ""
           } focus: outline-skin focus:outline-2`}
           type="text"
           value={password}
@@ -87,35 +87,37 @@ const InputSide = () => {
         </label>
         <textarea
           className={`resize-none p-2 rounded-md h-[80px] w-[445px] text-obsidian focus:outline-2 focus:outline-skin ${
-            i18n.language === "ar" ? "self-end text-rtl" : ""
+            i18n.language === "ar" ? "self-end rtl" : ""
           }`}
           value={text}
           onChange={handleText}
         ></textarea>
       </div>
+
       <div className="flex flex-row justify-center items-center gap-4">
         <button
-          className="p-2 bg-skin text-obsidian rounded-md"
+          className="p-2 bg-skin text-obsidian rounded-md duration-300 hover:bg-gray-400 active:scale-95"
           onClick={cipher}
         >
           {t("cipher")}
         </button>
         <button
-          className="p-2 bg-skin text-obsidian rounded-md"
+          className="p-2 bg-skin text-obsidian rounded-md duration-300 hover:bg-gray-400 active:scale-95"
           onClick={decipher}
         >
           {t("decipher")}
         </button>
         <button
-          className="p-2 bg-skin text-obsidian rounded-md"
+          className="p-2 bg-skin text-obsidian rounded-md duration-300 hover:bg-gray-400 active:scale-95"
           onClick={clear}
         >
           {t("clear")}
         </button>
       </div>
+
       <textarea
         className={`resize-none p-2 rounded-md h-[80px] w-[445px] text-obsidian focus:outline-2 focus:outline-skin ${
-          i18n.language === "ar" ? "self-end text-rtl" : ""
+          i18n.language === "ar" ? "self-end rtl" : ""
         }`}
         readOnly
         value={answer}

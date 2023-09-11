@@ -16,7 +16,7 @@ const Table = () => {
           {letters.split("").map((_, j) => (
             <td
               key={j}
-              className={`border-skin border-r-2  text-skin text-center text-xs min-w-[20px] min-h-[20px] last:border-r-0 ${
+              className={`border-skin min-w-[20px] min-h-[20px] border-r-2 text-skin text-center text-xs last:border-r-0 ${
                 i === row && j === col
                   ? "bg-purple-500"
                   : j === col
